@@ -297,3 +297,103 @@ class Orderlist(models.Model):
     class Meta:
         managed = False
         db_table = 'orderlist'
+
+
+
+class Images(models.Model):
+    name = models.TextField()
+    imageid = models.CharField(max_length=50)
+    user = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'images'
+
+class Customer(models.Model):
+    firstname = models.CharField(max_length=100)
+    surname = models.CharField(max_length=50)
+    username = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    business = models.CharField(max_length=50)
+    county = models.CharField(max_length=50)
+    createddate = models.CharField(max_length=50)
+    password = models.CharField(max_length=30)
+    website = models.CharField(max_length=100)
+    dob = models.CharField(max_length=50)
+    idno = models.CharField(max_length=50)
+    description = models.TextField()
+    box = models.CharField(max_length=50)
+    source = models.CharField(max_length=50, blank=True, null=True)
+    town = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    updatedate = models.CharField(max_length=50)
+    category = models.CharField(max_length=50)
+    apiaccount_id = models.CharField(max_length=30)
+    recoverpassword = models.CharField(max_length=50)
+    status = models.CharField(max_length=50)
+    companyid = models.IntegerField()
+    service = models.TextField()
+    usertype = models.CharField(max_length=50, blank=True, null=True)
+    smstype = models.IntegerField()
+    refer = models.TextField()
+    email = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'customer'
+
+class Tables(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.TextField()
+    createdate = models.CharField(max_length=50)
+    status = models.CharField(max_length=50)
+    userid = models.CharField(max_length=50)
+    updatedate = models.CharField(max_length=50)
+    companyid = models.CharField(max_length=50)
+    branchid = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'tables'
+
+
+class Invoice(models.Model):
+    plotno = models.CharField(max_length=60)
+    houseno = models.CharField(max_length=40)
+    tenantid = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    type = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    month = models.CharField(max_length=100)
+    year = models.CharField(max_length=100)
+    createdat = models.CharField(max_length=100)
+    updatedat = models.CharField(max_length=100)
+    userid = models.CharField(max_length=100)
+    duedate = models.CharField(max_length=40)
+    paymentstatus = models.CharField(max_length=40)
+    paymentmode = models.CharField(max_length=40)
+    paymentcode = models.CharField(max_length=100)
+    transactioncode = models.CharField(max_length=100)
+    approval = models.CharField(max_length=30)
+    approvedby = models.CharField(max_length=60)
+    approvaldate = models.CharField(max_length=60)
+    totalamount = models.CharField(max_length=40)
+    paid = models.DecimalField(max_digits=10, decimal_places=2)
+    balance = models.CharField(max_length=40)
+    companyid = models.CharField(max_length=100)
+    commission = models.DecimalField(max_digits=10, decimal_places=2)
+    vat = models.DecimalField(max_digits=10, decimal_places=2)
+    paymentdate = models.CharField(max_length=30)
+    order = models.IntegerField()
+    priority = models.IntegerField()
+    coparent = models.DecimalField(max_digits=10, decimal_places=2)
+    coparentcommission = models.DecimalField(max_digits=10, decimal_places=2)
+    coparentvat = models.DecimalField(max_digits=10, decimal_places=2)
+    coparentdate = models.CharField(max_length=30)
+    coparentuserid = models.IntegerField()
+    chargeid = models.CharField(max_length=30)
+    branchid = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'invoice'
