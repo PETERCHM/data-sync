@@ -17,7 +17,7 @@ from rest_framework import serializers
 class SalesOrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = SalesOrder
-        fields = ['myinvoice',  'code', 'qty', 'customer', 'userid', 'status', 'branch', 'date', 'amount', ]
+        fields = ['myinvoice',  'code', 'qty', 'customer', 'userid', 'discountype', 'discountvalue', 'status', 'branch', 'date', 'amount', ]
  
 
 class OpenordersSerializer(serializers.ModelSerializer):
