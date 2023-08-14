@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Products, Mainmenu, Invoice, Openorders, Tables, Customer, SalesOrder, Orderlist, Attendance, Activityloggs, SalesOrdercancelled, SalesOrderkitchen
+from .models import Products,  Invoice, Tables, Customer, SalesOrder, Attendance
 
 
 class ProductsSerializer(serializers.ModelSerializer):
@@ -7,29 +7,11 @@ class ProductsSerializer(serializers.ModelSerializer):
         model = Products
         fields = ['code', 'name', 'description', 'sellingprice', 'imgid', 'category']
 
-class MainmenuSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Mainmenu
-        fields = '__all__'
-
-from rest_framework import serializers
-
 class SalesOrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = SalesOrder
         fields = ['myinvoice',  'code', 'qty', 'customer', 'userid', 'discountype', 'discountvalue', 'status', 'branch', 'date', 'amount', ]
  
-
-class OpenordersSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Openorders
-        fields = '__all__'
-
-class OrderlistSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Orderlist
-        fields = '__all__'
-
 class AttendanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attendance
@@ -49,18 +31,3 @@ class InvoiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invoice
         fields = ['order','userid', 'totalamount', 'paymentmode', 'approvedby', 'approvaldate', 'type', 'paid', 'balance']
-
-class ActivityloggsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Activityloggs
-        fields = '__all__'
-
-class SalesOrdercancelledSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SalesOrdercancelled
-        fields = '__all__'
-
-class SalesOrderkitchenSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SalesOrderkitchen
-        fields = '__all__'
