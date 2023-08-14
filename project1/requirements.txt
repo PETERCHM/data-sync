@@ -1,6 +1,7 @@
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
 Django==4.2.4
+django-cors-headers==4.2.0
 djangorestframework==3.14.0
 drf-yasg==1.21.7
 inflection==0.5.1
@@ -8,8 +9,6 @@ mysql-connector-python==8.1.0
 mysqlclient==2.2.0
 packaging==23.1
 protobuf==4.21.12
-psycopg2==2.9.6
-pyscopg2==66.0.2
 python-decouple==3.8
 pytz==2023.3
 PyYAML==6.0.1
